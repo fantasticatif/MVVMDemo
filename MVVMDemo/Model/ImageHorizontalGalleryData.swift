@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct ImageHorizontalGalleryData: HorizontalImageGalleryComponentable
+struct HorizontalGalleryData<ItemType: InfoInitializerable>: HorizontalGalleryComponentable
 {
     var title: String?
     
-    var items: [ImageComponentable]
+    var items: [ItemType]
     
     var itemUseFullWidth: Bool
     
@@ -25,8 +25,30 @@ struct ImageHorizontalGalleryData: HorizontalImageGalleryComponentable
     
     var componentType: PageComponentType
     
-    var action: ActionableType
+    
+    init?(info: [AnyHashable : Any]) {
+        guard let itemsInfo = info["items"] as? [[AnyHashable: Any]] else {
+            return nil
+        }
+        var items = [ItemType]()
+        for itemInfo in itemsInfo
+        {
+            if let item = ItemType(info: itemInfo) {
+                items.append(item)
+            }
+        }
+        self.items = items
+        
+        title = info["title"] as? String
+        itemUseFullWidth = info["itemUseFullWidth"] as? Bool ?? true
+        maxWidth = info["maxWidth"] as? Float
+        height = info ["height"] as? Float
+        interSpacing = info["interSpacing"] as? Float ?? 10
+        componentType = .gallery
+    }
     
     
 }
+
+
 

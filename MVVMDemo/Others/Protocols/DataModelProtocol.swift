@@ -12,22 +12,29 @@ import Foundation
 protocol PageComponent
 {
     var componentType: PageComponentType {get}
-    var action: ActionableType {get}
+    init?(info:[AnyHashable: Any])
 }
 
-protocol ImageComponentable {
+protocol InfoInitializerable {
+    init?(info:[AnyHashable: Any])
+}
+
+protocol ImageComponentable:InfoInitializerable {
     var image: String {get}
     var action: Actionable {get}
+    
 }
 
 protocol ProductItemable {
     var title: String {get}
     var sellingPrice: Float {get}
     var oldPrice: Float {get}
+    init?(info:[AnyHashable: Any])
 }
 
 protocol Actionable {
     var action: ActionableType {get}
+    init(info:[AnyHashable: Any])
 }
 
 protocol HorizontalGalleryComponentable: PageComponent {
@@ -38,12 +45,7 @@ protocol HorizontalGalleryComponentable: PageComponent {
     var maxWidth: Float? {get}
     var height: Float? {get}
     var interSpacing: Float {get}
+    
+    init?(info:[AnyHashable: Any])
 }
 
-protocol HorizontalImageGalleryComponentable: HorizontalGalleryComponentable where ItemType == ImageComponentable {
-    
-}
-
-protocol ProductSliderComponentable: HorizontalGalleryComponentable where ItemType == ProductItemable {
-    
-}
