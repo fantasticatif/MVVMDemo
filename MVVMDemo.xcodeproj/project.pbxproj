@@ -17,6 +17,7 @@
 		06314A5622D91443001613F4 /* ImageHorizontalGalleryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06314A5522D91443001613F4 /* ImageHorizontalGalleryData.swift */; };
 		067D1D7922D98D9F002CF80A /* DataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D1D7822D98D9F002CF80A /* DataModelProtocol.swift */; };
 		067D1D7C22D98DD1002CF80A /* DataModelEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D1D7B22D98DD1002CF80A /* DataModelEnums.swift */; };
+		067D1D7E22D9D89B002CF80A /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D1D7D22D9D89B002CF80A /* ProductItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		06314A5522D91443001613F4 /* ImageHorizontalGalleryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHorizontalGalleryData.swift; sourceTree = "<group>"; };
 		067D1D7822D98D9F002CF80A /* DataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelProtocol.swift; sourceTree = "<group>"; };
 		067D1D7B22D98DD1002CF80A /* DataModelEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelEnums.swift; sourceTree = "<group>"; };
+		067D1D7D22D9D89B002CF80A /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				06314A5522D91443001613F4 /* ImageHorizontalGalleryData.swift */,
+				067D1D7D22D9D89B002CF80A /* ProductItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067D1D7E22D9D89B002CF80A /* ProductItem.swift in Sources */,
 				06314A2722D91140001613F4 /* ViewController.swift in Sources */,
 				06314A2522D91140001613F4 /* AppDelegate.swift in Sources */,
 				06314A5622D91443001613F4 /* ImageHorizontalGalleryData.swift in Sources */,

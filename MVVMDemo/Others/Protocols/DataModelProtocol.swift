@@ -9,10 +9,9 @@
 import Foundation
 
 
-protocol PageComponent
+protocol PageComponent: InfoInitializerable
 {
     var componentType: PageComponentType {get}
-    init?(info:[AnyHashable: Any])
 }
 
 protocol InfoInitializerable {
@@ -21,7 +20,6 @@ protocol InfoInitializerable {
 
 protocol ImageComponentable:InfoInitializerable {
     var image: String {get}
-    var action: Actionable {get}
     
 }
 
@@ -29,7 +27,10 @@ protocol ProductItemable {
     var title: String {get}
     var sellingPrice: Float {get}
     var oldPrice: Float {get}
+    var imageURI: String {get}
+    var haveOldPrice: Bool {get}
     init?(info:[AnyHashable: Any])
+    
 }
 
 protocol Actionable {
